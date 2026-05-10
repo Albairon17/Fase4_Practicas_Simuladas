@@ -6,3 +6,39 @@
 2026-05-06 20:33:32,029 - ERROR - La tarifa debe ser mayor a 0
 2026-05-06 20:33:32,029 - ERROR - Las horas deben ser mayores a 0
 2026-05-06 20:33:32,029 - ERROR - Error procesando la reserva
+2026-05-06 20:47:30,863 - ERROR - El nombre no puede estar vacío
+2026-05-06 20:47:30,863 - ERROR - La tarifa debe ser mayor a 0
+2026-05-06 20:47:30,863 - ERROR - Las horas deben ser mayores a 0
+2026-05-06 20:47:30,863 - ERROR - Error procesando la reserva
+2026-05-06 21:12:51,708 - ERROR - El nombre no puede estar vacío
+2026-05-06 21:12:51,709 - ERROR - La tarifa debe ser mayor a 0
+2026-05-06 21:12:51,709 - ERROR - Las horas deben ser mayores a 0
+2026-05-06 21:12:51,710 - ERROR - Error procesando la reserva
+2026-05-06 21:18:09,467 - ERROR - El nombre no puede estar vacío
+2026-05-06 21:18:09,468 - ERROR - La tarifa debe ser mayor a 0
+2026-05-06 21:18:09,469 - ERROR - Las horas deben ser mayores a 0
+2026-05-06 21:18:09,469 - ERROR - Error procesando la reserva
+2026-05-06 21:21:19,337 - ERROR - El nombre no puede estar vacío
+2026-05-06 21:21:19,342 - ERROR - La tarifa debe ser mayor a 0
+2026-05-06 21:21:19,342 - ERROR - Las horas deben ser mayores a 0
+2026-05-06 21:21:19,344 - ERROR - Error procesando la reserva
+2026-05-06 21:22:19,021 - ERROR - El nombre no puede estar vacío
+2026-05-06 21:22:19,022 - ERROR - La tarifa debe ser mayor a 0
+2026-05-06 21:22:19,022 - ERROR - Las horas deben ser mayores a 0
+2026-05-06 21:22:19,023 - ERROR - Error procesando la reserva
+2026-05-06 21:24:05,678 - ERROR - El nombre no puede estar vacío
+2026-05-06 21:24:05,678 - ERROR - La tarifa debe ser mayor a 0
+2026-05-06 21:24:05,678 - ERROR - Las horas deben ser mayores a 0
+2026-05-06 21:24:05,678 - ERROR - Error procesando la reserva
+2026-05-06 21:25:32,167 - ERROR - El nombre no puede estar vacío
+2026-05-06 21:25:32,167 - ERROR - La tarifa debe ser mayor a 0
+2026-05-06 21:25:32,167 - ERROR - Las horas deben ser mayores a 0
+2026-05-06 21:25:32,167 - ERROR - Error procesando la reserva
+2026-05-06 21:25:48,403 - ERROR - El nombre no puede estar vacío
+2026-05-06 21:25:48,403 - ERROR - La tarifa debe ser mayor a 0
+2026-05-06 21:25:48,403 - ERROR - Las horas deben ser mayores a 0
+2026-05-06 21:25:48,405 - ERROR - Error procesando la reserva
+2026-05-10 08:51:47,025 - ERROR - El nombre no puede estar vacío
+2026-05-10 08:51:47,027 - ERROR - La tarifa debe ser mayor a 0
+2026-05-10 08:51:47,030 - ERROR - Las horas deben ser mayores a 0
+2026-05-10 08:51:47,030 - ERROR - Error procesando la reserva

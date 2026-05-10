@@ -1,8 +1,13 @@
+#Estudiante: José Albeiro García
+#Grupo: 213023_347
+#Universidad Nacional Abierta y a Distancia - UNAD
+
+
 from abc import ABC, abstractmethod
 import logging
 
 
-# ---------------- LOGS ----------------
+# Configuración del archivo de logs
 
 logging.basicConfig(
     filename="logs.txt",
@@ -11,7 +16,7 @@ logging.basicConfig(
 )
 
 
-# ---------------- EXCEPCIONES ----------------
+# Excepciones personalizadas
 
 class ClienteInvalidoError(Exception):
     pass
@@ -25,7 +30,7 @@ class ServicioNoDisponibleError(Exception):
     pass
 
 
-# ---------------- CLASE ABSTRACTA ----------------
+# Clase abstracta principal
 
 class Entidad(ABC):
 
@@ -37,7 +42,7 @@ class Entidad(ABC):
         pass
 
 
-# ---------------- CLIENTE ----------------
+# Clase cliente
 
 class Cliente(Entidad):
 
@@ -71,7 +76,7 @@ class Cliente(Entidad):
         )
 
 
-# ---------------- SERVICIO ABSTRACTO ----------------
+# Clase abstracta servicio
 
 class Servicio(ABC):
 
@@ -95,7 +100,7 @@ class Servicio(ABC):
         pass
 
 
-# ---------------- SERVICIOS ----------------
+# Servicios disponibles
 
 class ReservaSala(Servicio):
 
@@ -112,7 +117,7 @@ class AlquilerEquipo(Servicio):
 
     def calcular_costo(self, horas):
 
-        seguro = 15
+        seguro = 15000
 
         return (self.tarifa * horas) + seguro
 
@@ -136,7 +141,7 @@ class AsesoriaEspecializada(Servicio):
         return "Servicio de asesoría especializada"
 
 
-# ---------------- RESERVA ----------------
+# Clase reserva
 
 class Reserva:
 
@@ -160,7 +165,7 @@ class Reserva:
 
         self.estado = "Cancelada"
 
-    # método tipo sobrecarga
+    # Método con parámetros opcionales
     def calcular_total(
         self,
         descuento=0,
@@ -200,7 +205,7 @@ class Reserva:
 
             total = self.calcular_total()
 
-            print("Costo:", total)
+            print(f"Costo: ${total:,.0f}".replace(",", "."))
 
         except Exception as e:
 
@@ -209,20 +214,20 @@ class Reserva:
             )
 
 
-# ---------------- LISTAS ----------------
+# Listas principales
 
 clientes = []
 reservas = []
 
 
-# ---------------- OPERACIONES ----------------
-
 print("========== SOFTWARE FJ ==========\n")
 
 
-# 1 CLIENTE CORRECTO
+# Registro de clientes
 
 try:
+
+    print("Registrando cliente Juan...")
 
     cliente1 = Cliente(
         1,
@@ -239,9 +244,9 @@ except Exception as e:
     logging.error(e)
 
 
-# 2 CLIENTE INCORRECTO
-
 try:
+
+    print("\nRegistrando cliente inválido...")
 
     cliente2 = Cliente(
         2,
@@ -256,13 +261,53 @@ except ClienteInvalidoError as e:
     logging.error(e)
 
 
-# 3 SERVICIO CORRECTO
+try:
+
+    print("\nRegistrando cliente María...")
+
+    cliente3 = Cliente(
+        3,
+        "Maria",
+        "maria@gmail.com"
+    )
+
+    clientes.append(cliente3)
+
+    cliente3.mostrar_info()
+
+except Exception as e:
+
+    logging.error(e)
+
 
 try:
 
+    print("\nRegistrando cliente Carlos...")
+
+    cliente4 = Cliente(
+        4,
+        "Carlos",
+        "carlos@gmail.com"
+    )
+
+    clientes.append(cliente4)
+
+    cliente4.mostrar_info()
+
+except Exception as e:
+
+    logging.error(e)
+
+
+# Creación de servicios
+
+try:
+
+    print("\nCreando servicio de sala...")
+
     servicio1 = ReservaSala(
         "Sala VIP",
-        50
+        150000
     )
 
     print(servicio1.descripcion())
@@ -272,13 +317,13 @@ except Exception as e:
     logging.error(e)
 
 
-# 4 SERVICIO INCORRECTO
-
 try:
+
+    print("\nCreando servicio inválido...")
 
     servicio2 = AlquilerEquipo(
         "Computador Gamer",
-        -20
+        -20000
     )
 
 except ValueError as e:
@@ -288,9 +333,43 @@ except ValueError as e:
     logging.error(e)
 
 
-# 5 RESERVA CORRECTA
+try:
+
+    print("\nCreando servicio de alquiler...")
+
+    servicio3 = AlquilerEquipo(
+        "Portatil Empresarial",
+        80000
+    )
+
+    print(servicio3.descripcion())
+
+except Exception as e:
+
+    logging.error(e)
+
 
 try:
+
+    print("\nCreando servicio de asesoría...")
+
+    servicio4 = AsesoriaEspecializada(
+        "Asesoría Python",
+        120000
+    )
+
+    print(servicio4.descripcion())
+
+except Exception as e:
+
+    logging.error(e)
+
+
+# Procesamiento de reservas
+
+try:
+
+    print("\nProcesando reserva de Juan...")
 
     reserva1 = Reserva(
         cliente1,
@@ -309,9 +388,9 @@ except Exception as e:
     logging.error(e)
 
 
-# 6 RESERVA INCORRECTA
-
 try:
+
+    print("\nProcesando reserva inválida...")
 
     reserva2 = Reserva(
         cliente1,
@@ -326,22 +405,19 @@ except ReservaInvalidaError as e:
     logging.error(e)
 
 
-# 7 ASESORIA
-
 try:
 
-    servicio3 = AsesoriaEspecializada(
-        "Asesoría Python",
-        100
-    )
+    print("\nProcesando reserva de María...")
 
     reserva3 = Reserva(
-        cliente1,
+        cliente3,
         servicio3,
         2
     )
 
     reserva3.confirmar()
+
+    reservas.append(reserva3)
 
     reserva3.mostrar_reserva()
 
@@ -350,9 +426,32 @@ except Exception as e:
     logging.error(e)
 
 
-# 8 CANCELACION
+try:
+
+    print("\nProcesando asesoría de Carlos...")
+
+    reserva4 = Reserva(
+        cliente4,
+        servicio4,
+        2
+    )
+
+    reserva4.confirmar()
+
+    reservas.append(reserva4)
+
+    reserva4.mostrar_reserva()
+
+except Exception as e:
+
+    logging.error(e)
+
+
+# Cancelación de reserva
 
 try:
+
+    print("\nCancelando reserva de Juan...")
 
     reserva1.cancelar()
 
@@ -365,9 +464,11 @@ except Exception as e:
     logging.error(e)
 
 
-# 9 TRY EXCEPT ELSE FINALLY
+# Uso de try except else finally
 
 try:
+
+    print("\nRealizando conversión...")
 
     numero = int("100")
 
@@ -384,9 +485,11 @@ finally:
     print("Proceso terminado")
 
 
-# 10 ENCADENAMIENTO DE EXCEPCIONES
+# Encadenamiento de excepciones
 
 try:
+
+    print("\nProbando excepción encadenada...")
 
     try:
 
@@ -408,9 +511,9 @@ except ReservaInvalidaError as e:
     logging.error(e)
 
 
-print("\nSistema finalizado sin detenerse")
+print("\nProceso finalizado correctamente")
 
 
-# PARA QUE LA VENTANA NO SE CIERRE
+# Evita que la ventana se cierre automáticamente
 
 input("\nPresione Enter para salir...")
