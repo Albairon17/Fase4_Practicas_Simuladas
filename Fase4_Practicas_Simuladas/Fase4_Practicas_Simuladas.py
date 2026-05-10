@@ -1,6 +1,4 @@
-#Estudiante: José Albeiro García
-#Grupo: 213023_347
-#Universidad Nacional Abierta y a Distancia - UNAD
+
 
 
 from abc import ABC, abstractmethod
