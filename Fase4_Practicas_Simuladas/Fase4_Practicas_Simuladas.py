@@ -1,4 +1,6 @@
-
+#Estudiante: José Albeiro García
+#Grupo: 213023_347
+#Universidad Nacional Abierta y a Distancia - UNAD
 
 
 from abc import ABC, abstractmethod
@@ -363,7 +365,7 @@ except Exception as e:
     logging.error(e)
 
 
-# Procesamiento de reservas
+# Gestión de reservas
 
 try:
 
