@@ -365,7 +365,7 @@ except Exception as e:
     logging.error(e)
 
 
-# Gestión de reservas
+# Gestión y procesamiento de reservas
 
 try:
 
