@@ -514,6 +514,6 @@ except ReservaInvalidaError as e:
 print("\nProceso finalizado correctamente")
 
 
-# Evita que la ventana se cierre automáticamente
+# Mantiene abierta la ventana al finalizar
 
 input("\nPresione Enter para salir...")
